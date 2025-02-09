@@ -1,0 +1,15 @@
+POM (Page Object Model) Structure
+
+workspace
+|
+|_ tests / tasks
+|
+|_ pages
+|
+|_ locators
+|
+|_ libs
+|
+|_ data
+|
+|_ reports

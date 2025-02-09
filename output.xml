@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.8 on darwin)" generated="2025-02-09T15:17:06.271360" rpa="false" schemaversion="5">
+<suite id="s1" name="Login Scenario" source="/Users/user/Desktop/robot-web/tests/login_scenario.robot">
+<test id="s1-t1" name="Verify user should be login using valid username and password" line="7">
+<kw name="Given user open the saucedemo apps" owner="common">
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-02-09T15:17:06.481359" elapsed="0.000123"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-09T15:17:06.481669" level="INFO">Opening browser 'chrome' to base url 'https://saucedemo.com'.</msg>
+<arg>https://saucedemo.com</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-09T15:17:06.481575" elapsed="1.232225"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-02-09T15:17:07.714190" elapsed="0.018318"/>
+</kw>
+<status status="PASS" start="2025-02-09T15:17:06.480854" elapsed="1.251760"/>
+</kw>
+<kw name="When user input correct username" owner="login">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-09T15:17:07.733396" level="INFO">Typing text 'standard_user' into text field '//*[@id="user-name"]'.</msg>
+<arg>${username_tb}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-09T15:17:07.733106" elapsed="0.126621"/>
+</kw>
+<arg>standard_user</arg>
+<status status="PASS" start="2025-02-09T15:17:07.732869" elapsed="0.126966"/>
+</kw>
+<kw name="And user input correct password" owner="login">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-02-09T15:17:07.860337" level="INFO">Typing password into text field '//*[@id="password"]'.</msg>
+<msg time="2025-02-09T15:17:07.882801" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${password_tb}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-09T15:17:07.860197" elapsed="0.045067"/>
+</kw>
+<arg>secret_sauce</arg>
+<status status="PASS" start="2025-02-09T15:17:07.860010" elapsed="0.045336"/>
+</kw>
+<kw name="And User click the login button" owner="login">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-09T15:17:07.905943" level="INFO">Clicking element '//*[@id="login-button"]'.</msg>
+<arg>${login_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-09T15:17:07.905725" elapsed="0.053334"/>
+</kw>
+<status status="PASS" start="2025-02-09T15:17:07.905508" elapsed="0.053638"/>
+</kw>
+<kw name="Then User should go to inventory page" owner="inventory">
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-09T15:17:07.959828" level="INFO">Verifying element '//div[@class='app_logo']' contains exact text 'Swag Labs'.</msg>
+<arg>${title_txt}</arg>
+<arg>Swag Labs</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-02-09T15:17:07.959617" elapsed="0.014901"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-09T15:17:07.974937" level="INFO">Verifying element '//span[contains(text(), 'Products')]' contains exact text 'Products'.</msg>
+<arg>${title_prod_txt}</arg>
+<arg>Products</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-02-09T15:17:07.974751" elapsed="0.012109"/>
+</kw>
+<status status="PASS" start="2025-02-09T15:17:07.959422" elapsed="0.027532"/>
+</kw>
+<status status="PASS" start="2025-02-09T15:17:06.480435" elapsed="1.506660"/>
+</test>
+<status status="PASS" start="2025-02-09T15:17:06.272192" elapsed="1.715207"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Login Scenario" id="s1" pass="1" fail="0" skip="0">Login Scenario</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
