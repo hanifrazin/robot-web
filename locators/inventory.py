@@ -1,3 +1,7 @@
 title_txt = "//div[@class='app_logo']"
 title_prod_txt = "//span[contains(text(), 'Products')]"
-backpack_add2cart_btn = "//button[@id='add-to-cart-sauce-labs-backpack']"
+select_sort = "//select[@class='product_sort_container']"
+fleece_jacket_btn="//button[@id='add-to-cart-sauce-labs-fleece-jacket']"
+bolt_tshirt_btn="//button[@id='add-to-cart-sauce-labs-bolt-t-shirt']"
+backpack_btn = "//button[@id='add-to-cart-sauce-labs-backpack']"
+number_cart = "//span[@class='shopping_cart_badge']"

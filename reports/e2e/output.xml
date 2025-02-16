@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.8 on darwin)" generated="2025-02-16T22:40:31.145134" rpa="true" schemaversion="5">
+<suite id="s1" name="scenario E2E" source="/Users/user/Desktop/robot-web/tests/scenario_E2E.robot">
+<test id="s1-t1" name="Running Automation from login to checkout" line="10">
+<kw name="user open the saucedemo apps" owner="common">
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-02-16T22:40:31.254732" elapsed="0.000128"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-16T22:40:31.255053" level="INFO">Opening browser 'chrome' to base url 'https://saucedemo.com'.</msg>
+<arg>https://saucedemo.com</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-16T22:40:31.254959" elapsed="1.167924"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-02-16T22:40:32.423231" elapsed="0.369032"/>
+</kw>
+<status status="PASS" start="2025-02-16T22:40:31.254269" elapsed="1.538247"/>
+</kw>
+<kw name="user input correct username" owner="login">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-16T22:40:32.793547" level="INFO">Typing text 'standard_user' into text field '//*[@id="user-name"]'.</msg>
+<arg>${username_tb}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-16T22:40:32.793181" elapsed="0.099564"/>
+</kw>
+<arg>standard_user</arg>
+<status status="PASS" start="2025-02-16T22:40:32.792876" elapsed="0.099958"/>
+</kw>
+<kw name="user input correct password" owner="login">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-02-16T22:40:32.893375" level="INFO">Typing password into text field '//*[@id="password"]'.</msg>
+<msg time="2025-02-16T22:40:32.912985" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${password_tb}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-16T22:40:32.893238" elapsed="0.043792"/>
+</kw>
+<arg>secret_sauce</arg>
+<status status="PASS" start="2025-02-16T22:40:32.893028" elapsed="0.044086"/>
+</kw>
+<kw name="user click the login button" owner="login">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-16T22:40:32.937588" level="INFO">Clicking element '//*[@id="login-button"]'.</msg>
+<arg>${login_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-16T22:40:32.937467" elapsed="0.050298"/>
+</kw>
+<status status="PASS" start="2025-02-16T22:40:32.937271" elapsed="0.050575"/>
+</kw>
+<kw name="User should go to inventory page" owner="inventory">
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-16T22:40:32.988474" level="INFO">Verifying element '//div[@class='app_logo']' contains exact text 'Swag Labs'.</msg>
+<arg>${title_txt}</arg>
+<arg>Swag Labs</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-02-16T22:40:32.988332" elapsed="0.014032"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-16T22:40:33.002649" level="INFO">Verifying element '//span[contains(text(), 'Products')]' contains exact text 'Products'.</msg>
+<arg>${title_prod_txt}</arg>
+<arg>Products</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-02-16T22:40:33.002495" elapsed="0.012131"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2025-02-16T22:40:33.014952" level="INFO">Selecting options from selection list '//select[@class='product_sort_container']' by label Price (high to low).</msg>
+<arg>${select_sort}</arg>
+<arg>Price (high to low)</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2025-02-16T22:40:33.014776" elapsed="0.039840"/>
+</kw>
+<status status="PASS" start="2025-02-16T22:40:32.988100" elapsed="0.066597"/>
+</kw>
+<kw name="User add 3 products to cart" owner="inventory">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-16T22:40:33.055228" level="INFO">Clicking element '//button[@id='add-to-cart-sauce-labs-fleece-jacket']'.</msg>
+<arg>${fleece_jacket_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-16T22:40:33.055102" elapsed="0.033578"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-16T22:40:33.089010" level="INFO">Clicking element '//button[@id='add-to-cart-sauce-labs-backpack']'.</msg>
+<arg>${backpack_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-16T22:40:33.088855" elapsed="0.030694"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-16T22:40:33.119839" level="INFO">Clicking element '//button[@id='add-to-cart-sauce-labs-bolt-t-shirt']'.</msg>
+<arg>${bolt_tshirt_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-16T22:40:33.119686" elapsed="0.029618"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-16T22:40:33.149590" level="INFO">Verifying element '//span[@class='shopping_cart_badge']' contains exact text '3'.</msg>
+<arg>${number_cart}</arg>
+<arg>3</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-02-16T22:40:33.149435" elapsed="0.010178"/>
+</kw>
+<status status="PASS" start="2025-02-16T22:40:33.054898" elapsed="0.104797"/>
+</kw>
+<kw name="User click cart to check selected items" owner="cart">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-16T22:40:33.160355" level="INFO">Clicking element '//a[@class='shopping_cart_link']'.</msg>
+<arg>${cart_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-16T22:40:33.160083" elapsed="0.035942"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-16T22:40:33.196308" level="INFO">Verifying element '//span[@class='title']' contains exact text 'Your Cart'.</msg>
+<arg>${cart_title}</arg>
+<arg>Your Cart</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-02-16T22:40:33.196155" elapsed="0.010258"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-16T22:40:33.206704" level="INFO">Verifying element '//div[normalize-space()='Sauce Labs Fleece Jacket']' contains exact text 'Sauce Labs Fleece Jacket'.</msg>
+<arg>${cart_items1}</arg>
+<arg>Sauce Labs Fleece Jacket</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-02-16T22:40:33.206543" elapsed="0.009687"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-16T22:40:33.216505" level="INFO">Verifying element '//div[normalize-space()='Sauce Labs Backpack']' contains exact text 'Sauce Labs Backpack'.</msg>
+<arg>${cart_items2}</arg>
+<arg>Sauce Labs Backpack</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-02-16T22:40:33.216354" elapsed="0.009149"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-16T22:40:33.225726" level="INFO">Verifying element '//div[normalize-space()='Sauce Labs Bolt T-Shirt']' contains exact text 'Sauce Labs Bolt T-Shirt'.</msg>
+<arg>${cart_items3}</arg>
+<arg>Sauce Labs Bolt T-Shirt</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-02-16T22:40:33.225602" elapsed="0.009017"/>
+</kw>
+<status status="PASS" start="2025-02-16T22:40:33.159861" elapsed="0.074823"/>
+</kw>
+<kw name="User click checkout button" owner="checkout">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-16T22:40:33.235175" level="INFO">Clicking element '//button[@id='checkout']'.</msg>
+<arg>${checkout_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-16T22:40:33.235075" elapsed="0.035185"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-16T22:40:33.270545" level="INFO">Verifying element '//span[@class='title']' contains exact text 'Checkout: Your Information'.</msg>
+<arg>${checkout_title_text}</arg>
+<arg>Checkout: Your Information</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-02-16T22:40:33.270391" elapsed="0.008455"/>
+</kw>
+<status status="PASS" start="2025-02-16T22:40:33.234836" elapsed="0.044096"/>
+</kw>
+<kw name="User input First Name" owner="checkout">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-16T22:40:33.279406" level="INFO">Typing text 'Hanif' into text field '//input[@id='first-name']'.</msg>
+<arg>${first_name_input}</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-16T22:40:33.279268" elapsed="0.040564"/>
+</kw>
+<arg>Hanif</arg>
+<status status="PASS" start="2025-02-16T22:40:33.279077" elapsed="0.040868"/>
+</kw>
+<kw name="User input Last Name" owner="checkout">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-16T22:40:33.320471" level="INFO">Typing text 'Rahmatullah' into text field '//input[@id='last-name']'.</msg>
+<arg>${last_name_input}</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-16T22:40:33.320343" elapsed="0.045763"/>
+</kw>
+<arg>Rahmatullah</arg>
+<status status="PASS" start="2025-02-16T22:40:33.320147" elapsed="0.046038"/>
+</kw>
+<kw name="User input ZIP/Postal Code" owner="checkout">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-16T22:40:33.366754" level="INFO">Typing text '10110' into text field '//input[@id='postal-code']'.</msg>
+<arg>${postal_code_input}</arg>
+<arg>${postal_code}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-16T22:40:33.366616" elapsed="0.039144"/>
+</kw>
+<arg>10110</arg>
+<status status="PASS" start="2025-02-16T22:40:33.366386" elapsed="0.039456"/>
+</kw>
+<kw name="User click continue button" owner="checkout">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-16T22:40:33.406380" level="INFO">Clicking element '//input[@id='continue']'.</msg>
+<arg>${continue_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-16T22:40:33.406225" elapsed="0.054530"/>
+</kw>
+<status status="PASS" start="2025-02-16T22:40:33.406028" elapsed="0.054804"/>
+</kw>
+<kw name="User check all items and price in this page" owner="finish">
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-16T22:40:33.461405" level="INFO">Verifying element '//div[normalize-space()='Sauce Labs Fleece Jacket']' contains exact text 'Sauce Labs Fleece Jacket'.</msg>
+<arg>${fix_items1}</arg>
+<arg>Sauce Labs Fleece Jacket</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-02-16T22:40:33.461269" elapsed="0.008609"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-16T22:40:33.470154" level="INFO">Verifying element '//div[normalize-space()='Sauce Labs Backpack']' contains exact text 'Sauce Labs Backpack'.</msg>
+<arg>${fix_items2}</arg>
+<arg>Sauce Labs Backpack</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-02-16T22:40:33.470009" elapsed="0.007803"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-16T22:40:33.478147" level="INFO">Verifying element '//div[normalize-space()='Sauce Labs Bolt T-Shirt']' contains exact text 'Sauce Labs Bolt T-Shirt'.</msg>
+<arg>${fix_items3}</arg>
+<arg>Sauce Labs Bolt T-Shirt</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-02-16T22:40:33.477950" elapsed="0.007855"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-16T22:40:33.486097" level="INFO">Verifying element '//div[normalize-space()='SauceCard #31337']' contains exact text 'SauceCard #31337'.</msg>
+<arg>${payment_info}</arg>
+<arg>SauceCard #31337</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-02-16T22:40:33.485944" elapsed="0.009703"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-16T22:40:33.495902" level="INFO">Verifying element '//div[normalize-space()='Free Pony Express Delivery!']' contains exact text 'Free Pony Express Delivery!'.</msg>
+<arg>${ship_info}</arg>
+<arg>Free Pony Express Delivery!</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-02-16T22:40:33.495762" elapsed="0.009400"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-16T22:40:33.505391" level="INFO">Verifying element '//div[@class='summary_total_label']' contains exact text 'Total: $103.65'.</msg>
+<arg>${price_total}</arg>
+<arg>Total: $103.65</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-02-16T22:40:33.505261" elapsed="0.009048"/>
+</kw>
+<status status="PASS" start="2025-02-16T22:40:33.461065" elapsed="0.053331"/>
+</kw>
+<kw name="User click Finish button" owner="finish">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-16T22:40:33.514880" level="INFO">Clicking element '//button[@id='finish']'.</msg>
+<arg>${finish_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-16T22:40:33.514771" elapsed="0.034035"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-16T22:40:33.549079" level="INFO">Verifying element '//span[@class='title']' contains exact text 'Checkout: Complete!'.</msg>
+<arg>${success_co_text}</arg>
+<arg>Checkout: Complete!</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-02-16T22:40:33.548932" elapsed="0.008666"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-16T22:40:33.557879" level="INFO">Verifying element '//h2[@class='complete-header']' contains exact text 'Thank you for your order!'.</msg>
+<arg>${thanks_text}</arg>
+<arg>Thank you for your order!</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-02-16T22:40:33.557720" elapsed="0.009985"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-16T22:40:33.568016" level="INFO">Verifying element '//div[@class='complete-text']' contains exact text 'Your order has been dispatched, and will arrive just as fast as the pony can get there!'.</msg>
+<arg>${msg_text}</arg>
+<arg>Your order has been dispatched, and will arrive just as fast as the pony can get there!</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-02-16T22:40:33.567841" elapsed="0.009745"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-02-16T22:40:33.588411" level="INFO">Element '//img[@alt='Pony Express']' is displayed.</msg>
+<arg>${ceklis_img}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-16T22:40:33.577701" elapsed="0.010765"/>
+</kw>
+<status status="PASS" start="2025-02-16T22:40:33.514603" elapsed="0.073919"/>
+</kw>
+<status status="PASS" start="2025-02-16T22:40:31.253783" elapsed="2.334866"/>
+</test>
+<status status="PASS" start="2025-02-16T22:40:31.145922" elapsed="2.443020"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tasks</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="scenario E2E" id="s1" pass="1" fail="0" skip="0">scenario E2E</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

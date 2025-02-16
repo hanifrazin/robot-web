@@ -1,0 +1,9 @@
+checkout_btn = "//button[@id='checkout']"
+checkout_title_text = "//span[@class='title']"
+first_name = "Hanif"
+first_name_input = "//input[@id='first-name']"
+last_name = "Rahmatullah"
+last_name_input = "//input[@id='last-name']"
+postal_code = 10110
+postal_code_input = "//input[@id='postal-code']"
+continue_btn = "//input[@id='continue']"

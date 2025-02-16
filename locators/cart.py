@@ -1,0 +1,5 @@
+cart_btn = "//a[@class='shopping_cart_link']"
+cart_title = "//span[@class='title']"
+cart_items1 = "//div[normalize-space()='Sauce Labs Fleece Jacket']"
+cart_items2 = "//div[normalize-space()='Sauce Labs Backpack']"
+cart_items3 = "//div[normalize-space()='Sauce Labs Bolt T-Shirt']"
