@@ -9,4 +9,4 @@ user open the saucedemo apps
 
 Browser automatically close
     Sleep    2
-    Close Browser
+    Close All Browsers
