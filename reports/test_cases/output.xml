@@ -1,852 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.12.8 on darwin)" generated="2025-02-17T16:27:11.019682" rpa="false" schemaversion="5">
-<suite id="s1" name="Login Scenario" source="/Users/user/Desktop/robot-web/tests/login_scenario.robot">
-<test id="s1-t1" name="Scenario: Verify user should be login using valid username and password" line="10">
-<kw name="user open the saucedemo apps" owner="common" type="SETUP">
+<robot generator="Robot 7.2.2 (Python 3.12.8 on darwin)" generated="2025-02-17T17:37:43.496954" rpa="false" schemaversion="5">
+<suite id="s1" name="Inventory Scenario" source="/Users/user/Desktop/robot-web/tests/inventory_scenario.robot">
+<test id="s1-t1" name="Scenario: Verify default sorting is Name (A to Z)" line="8">
+<kw name="user success login to sauce demo" owner="common" type="SETUP">
+<kw name="user open the saucedemo apps" owner="common">
 <kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
 <arg>10</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2025-02-17T16:27:11.109962" elapsed="0.000132"/>
+<status status="PASS" start="2025-02-17T17:37:43.606539" elapsed="0.000114"/>
 </kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:27:11.110458" level="INFO">Opening browser 'chrome' to base url 'https://saucedemo.com'.</msg>
+<msg time="2025-02-17T17:37:43.606832" level="INFO">Opening browser 'chrome' to base url 'https://saucedemo.com'.</msg>
 <arg>https://saucedemo.com</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-02-17T16:27:11.110197" elapsed="1.130580"/>
+<status status="PASS" start="2025-02-17T17:37:43.606742" elapsed="5.938671"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-02-17T16:27:12.241065" elapsed="0.019021"/>
+<status status="PASS" start="2025-02-17T17:37:49.545949" elapsed="0.369228"/>
 </kw>
-<status status="PASS" start="2025-02-17T16:27:11.109508" elapsed="1.150689"/>
+<status status="PASS" start="2025-02-17T17:37:43.606186" elapsed="6.309129"/>
 </kw>
-<for flavor="IN">
-<iter>
-<kw name="Given user open the saucedemo apps" owner="common">
-<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
-<arg>10</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2025-02-17T16:27:12.260895" elapsed="0.000639"/>
-</kw>
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:27:12.261755" level="INFO">Opening browser 'chrome' to base url 'https://saucedemo.com'.</msg>
-<arg>https://saucedemo.com</arg>
-<arg>chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-02-17T16:27:12.261637" elapsed="0.950855"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-02-17T16:27:13.212824" elapsed="0.015755"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:27:12.260722" elapsed="0.967969"/>
-</kw>
-<kw name="When user input correct username" owner="login">
+<kw name="user input correct username" owner="login">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:27:13.229481" level="INFO">Typing text 'standard_user' into text field '//*[@id="user-name"]'.</msg>
+<msg time="2025-02-17T17:37:49.916266" level="INFO">Typing text 'standard_user' into text field '//*[@id="user-name"]'.</msg>
 <arg>${username_tb}</arg>
 <arg>${username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T16:27:13.229201" elapsed="0.112800"/>
-</kw>
-<arg>${users}</arg>
-<status status="PASS" start="2025-02-17T16:27:13.228948" elapsed="0.113146"/>
-</kw>
-<kw name="And user input correct password" owner="login">
-<kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:27:13.342557" level="INFO">Typing password into text field '//*[@id="password"]'.</msg>
-<msg time="2025-02-17T16:27:13.360204" level="INFO">Temporally setting log level to: NONE</msg>
-<arg>${password_tb}</arg>
-<arg>${password}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T16:27:13.342431" elapsed="0.039758"/>
-</kw>
-<arg>secret_sauce</arg>
-<status status="PASS" start="2025-02-17T16:27:13.342224" elapsed="0.040047"/>
-</kw>
-<kw name="And User click the login button" owner="login">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:27:13.382688" level="INFO">Clicking element '//*[@id="login-button"]'.</msg>
-<arg>${login_btn}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T16:27:13.382570" elapsed="0.046500"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:27:13.382403" elapsed="0.046755"/>
-</kw>
-<kw name="Then User should go to inventory page" owner="inventory">
-<kw name="Element Text Should Be" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:27:13.429751" level="INFO">Verifying element '//span[contains(text(), 'Products')]' contains exact text 'Products'.</msg>
-<arg>${title_prod_txt}</arg>
-<arg>Products</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="PASS" start="2025-02-17T16:27:13.429615" elapsed="0.013632"/>
-</kw>
-<kw name="Select From List By Label" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:27:13.443597" level="INFO">Selecting options from selection list '//select[@class='product_sort_container']' by label Price (high to low).</msg>
-<arg>${select_sort}</arg>
-<arg>Price (high to low)</arg>
-<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<status status="PASS" start="2025-02-17T16:27:13.443381" elapsed="0.040805"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:27:13.429386" elapsed="0.054883"/>
-</kw>
-<kw name="And Browser automatically close" owner="common">
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-02-17T16:27:15.487142" level="INFO">Slept 2 seconds.</msg>
-<arg>2</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-02-17T16:27:13.484663" elapsed="2.003209"/>
-</kw>
-<kw name="Close All Browsers" owner="SeleniumLibrary">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2025-02-17T16:27:15.489288" elapsed="0.196364"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:27:13.484435" elapsed="2.201303"/>
-</kw>
-<var name="${users}">standard_user</var>
-<status status="PASS" start="2025-02-17T16:27:12.260565" elapsed="3.425202"/>
-</iter>
-<iter>
-<kw name="Given user open the saucedemo apps" owner="common">
-<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
-<arg>10</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2025-02-17T16:27:15.686220" elapsed="0.000100"/>
-</kw>
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:27:15.686469" level="INFO">Opening browser 'chrome' to base url 'https://saucedemo.com'.</msg>
-<arg>https://saucedemo.com</arg>
-<arg>chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-02-17T16:27:15.686392" elapsed="4.066986"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-02-17T16:27:19.753728" elapsed="0.368393"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:27:15.686065" elapsed="4.436283"/>
-</kw>
-<kw name="When user input correct username" owner="login">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:27:20.123170" level="INFO">Typing text 'problem_user' into text field '//*[@id="user-name"]'.</msg>
-<arg>${username_tb}</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T16:27:20.122962" elapsed="0.101631"/>
-</kw>
-<arg>${users}</arg>
-<status status="PASS" start="2025-02-17T16:27:20.122669" elapsed="0.102008"/>
-</kw>
-<kw name="And user input correct password" owner="login">
-<kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:27:20.225141" level="INFO">Typing password into text field '//*[@id="password"]'.</msg>
-<msg time="2025-02-17T16:27:20.243963" level="INFO">Temporally setting log level to: NONE</msg>
-<arg>${password_tb}</arg>
-<arg>${password}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T16:27:20.225006" elapsed="0.042050"/>
-</kw>
-<arg>secret_sauce</arg>
-<status status="PASS" start="2025-02-17T16:27:20.224805" elapsed="0.042331"/>
-</kw>
-<kw name="And User click the login button" owner="login">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:27:20.267576" level="INFO">Clicking element '//*[@id="login-button"]'.</msg>
-<arg>${login_btn}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T16:27:20.267434" elapsed="0.047742"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:27:20.267276" elapsed="0.047997"/>
-</kw>
-<kw name="Then User should go to inventory page" owner="inventory">
-<kw name="Element Text Should Be" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:27:20.315799" level="INFO">Verifying element '//span[contains(text(), 'Products')]' contains exact text 'Products'.</msg>
-<arg>${title_prod_txt}</arg>
-<arg>Products</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="PASS" start="2025-02-17T16:27:20.315670" elapsed="0.013432"/>
-</kw>
-<kw name="Select From List By Label" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:27:20.329394" level="INFO">Selecting options from selection list '//select[@class='product_sort_container']' by label Price (high to low).</msg>
-<arg>${select_sort}</arg>
-<arg>Price (high to low)</arg>
-<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<status status="PASS" start="2025-02-17T16:27:20.329233" elapsed="0.038779"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:27:20.315498" elapsed="0.052612"/>
-</kw>
-<kw name="And Browser automatically close" owner="common">
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-02-17T16:27:22.369873" level="INFO">Slept 2 seconds.</msg>
-<arg>2</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-02-17T16:27:20.368458" elapsed="2.001906"/>
-</kw>
-<kw name="Close All Browsers" owner="SeleniumLibrary">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2025-02-17T16:27:22.371079" elapsed="0.084431"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:27:20.368276" elapsed="2.087326"/>
-</kw>
-<var name="${users}">problem_user</var>
-<status status="PASS" start="2025-02-17T16:27:15.685942" elapsed="6.769687"/>
-</iter>
-<iter>
-<kw name="Given user open the saucedemo apps" owner="common">
-<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
-<arg>10</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2025-02-17T16:27:22.456077" elapsed="0.000110"/>
-</kw>
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:27:22.456350" level="INFO">Opening browser 'chrome' to base url 'https://saucedemo.com'.</msg>
-<arg>https://saucedemo.com</arg>
-<arg>chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-02-17T16:27:22.456264" elapsed="4.092547"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-02-17T16:27:26.549150" elapsed="0.372266"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:27:22.455914" elapsed="4.465599"/>
-</kw>
-<kw name="When user input correct username" owner="login">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:27:26.922195" level="INFO">Typing text 'performance_glitch_user' into text field '//*[@id="user-name"]'.</msg>
-<arg>${username_tb}</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T16:27:26.922034" elapsed="0.100025"/>
-</kw>
-<arg>${users}</arg>
-<status status="PASS" start="2025-02-17T16:27:26.921781" elapsed="0.100364"/>
-</kw>
-<kw name="And user input correct password" owner="login">
-<kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:27:27.022584" level="INFO">Typing password into text field '//*[@id="password"]'.</msg>
-<msg time="2025-02-17T16:27:27.039635" level="INFO">Temporally setting log level to: NONE</msg>
-<arg>${password_tb}</arg>
-<arg>${password}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T16:27:27.022458" elapsed="0.043392"/>
-</kw>
-<arg>secret_sauce</arg>
-<status status="PASS" start="2025-02-17T16:27:27.022268" elapsed="0.043667"/>
-</kw>
-<kw name="And User click the login button" owner="login">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:27:27.066350" level="INFO">Clicking element '//*[@id="login-button"]'.</msg>
-<arg>${login_btn}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T16:27:27.066234" elapsed="5.051545"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:27:27.066071" elapsed="5.051790"/>
-</kw>
-<kw name="Then User should go to inventory page" owner="inventory">
-<kw name="Element Text Should Be" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:27:32.118352" level="INFO">Verifying element '//span[contains(text(), 'Products')]' contains exact text 'Products'.</msg>
-<arg>${title_prod_txt}</arg>
-<arg>Products</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="PASS" start="2025-02-17T16:27:32.118180" elapsed="0.013687"/>
-</kw>
-<kw name="Select From List By Label" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:27:32.132169" level="INFO">Selecting options from selection list '//select[@class='product_sort_container']' by label Price (high to low).</msg>
-<arg>${select_sort}</arg>
-<arg>Price (high to low)</arg>
-<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<status status="PASS" start="2025-02-17T16:27:32.132009" elapsed="5.042389"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:27:32.117996" elapsed="5.056488"/>
-</kw>
-<kw name="And Browser automatically close" owner="common">
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-02-17T16:27:39.181393" level="INFO">Slept 2 seconds.</msg>
-<arg>2</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-02-17T16:27:37.175155" elapsed="2.006400"/>
-</kw>
-<kw name="Close All Browsers" owner="SeleniumLibrary">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2025-02-17T16:27:39.181775" elapsed="0.078229"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:27:37.174748" elapsed="2.085352"/>
-</kw>
-<var name="${users}">performance_glitch_user</var>
-<status status="PASS" start="2025-02-17T16:27:22.455793" elapsed="16.804336"/>
-</iter>
-<iter>
-<kw name="Given user open the saucedemo apps" owner="common">
-<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
-<arg>10</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2025-02-17T16:27:39.260592" elapsed="0.000113"/>
-</kw>
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:27:39.260863" level="INFO">Opening browser 'chrome' to base url 'https://saucedemo.com'.</msg>
-<arg>https://saucedemo.com</arg>
-<arg>chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-02-17T16:27:39.260781" elapsed="3.841623"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-02-17T16:27:43.103030" elapsed="0.619218"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:27:39.260428" elapsed="4.461935"/>
-</kw>
-<kw name="When user input correct username" owner="login">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:27:43.723144" level="INFO">Typing text 'error_user' into text field '//*[@id="user-name"]'.</msg>
-<arg>${username_tb}</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T16:27:43.722950" elapsed="0.108876"/>
-</kw>
-<arg>${users}</arg>
-<status status="PASS" start="2025-02-17T16:27:43.722578" elapsed="0.109341"/>
-</kw>
-<kw name="And user input correct password" owner="login">
-<kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:27:43.832367" level="INFO">Typing password into text field '//*[@id="password"]'.</msg>
-<msg time="2025-02-17T16:27:43.849240" level="INFO">Temporally setting log level to: NONE</msg>
-<arg>${password_tb}</arg>
-<arg>${password}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T16:27:43.832238" elapsed="0.040186"/>
-</kw>
-<arg>secret_sauce</arg>
-<status status="PASS" start="2025-02-17T16:27:43.832049" elapsed="0.040454"/>
-</kw>
-<kw name="And User click the login button" owner="login">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:27:43.873338" level="INFO">Clicking element '//*[@id="login-button"]'.</msg>
-<arg>${login_btn}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T16:27:43.873198" elapsed="0.047717"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:27:43.872982" elapsed="0.048102"/>
-</kw>
-<kw name="Then User should go to inventory page" owner="inventory">
-<kw name="Element Text Should Be" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:27:43.921531" level="INFO">Verifying element '//span[contains(text(), 'Products')]' contains exact text 'Products'.</msg>
-<arg>${title_prod_txt}</arg>
-<arg>Products</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="PASS" start="2025-02-17T16:27:43.921405" elapsed="0.013877"/>
-</kw>
-<kw name="Select From List By Label" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:27:43.935601" level="INFO">Selecting options from selection list '//select[@class='product_sort_container']' by label Price (high to low).</msg>
-<arg>${select_sort}</arg>
-<arg>Price (high to low)</arg>
-<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<status status="PASS" start="2025-02-17T16:27:43.935434" elapsed="0.051875"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:27:43.921237" elapsed="0.066158"/>
-</kw>
-<kw name="And Browser automatically close" owner="common">
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-02-17T16:27:45.988912" level="INFO">Slept 2 seconds.</msg>
-<arg>2</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-02-17T16:27:43.987722" elapsed="2.001823"/>
-</kw>
-<kw name="Close All Browsers" owner="SeleniumLibrary">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2025-02-17T16:27:45.990513" elapsed="0.082423"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:27:43.987539" elapsed="2.085480"/>
-</kw>
-<var name="${users}">error_user</var>
-<status status="PASS" start="2025-02-17T16:27:39.260306" elapsed="6.812746"/>
-</iter>
-<iter>
-<kw name="Given user open the saucedemo apps" owner="common">
-<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
-<arg>10</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2025-02-17T16:27:46.073437" elapsed="0.000098"/>
-</kw>
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:27:46.073692" level="INFO">Opening browser 'chrome' to base url 'https://saucedemo.com'.</msg>
-<arg>https://saucedemo.com</arg>
-<arg>chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-02-17T16:27:46.073612" elapsed="3.799430"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-02-17T16:27:49.873886" elapsed="0.626439"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:27:46.073286" elapsed="4.427141"/>
-</kw>
-<kw name="When user input correct username" owner="login">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:27:50.501040" level="INFO">Typing text 'visual_user' into text field '//*[@id="user-name"]'.</msg>
-<arg>${username_tb}</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T16:27:50.500876" elapsed="0.095638"/>
-</kw>
-<arg>${users}</arg>
-<status status="PASS" start="2025-02-17T16:27:50.500623" elapsed="0.095972"/>
-</kw>
-<kw name="And user input correct password" owner="login">
-<kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:27:50.597165" level="INFO">Typing password into text field '//*[@id="password"]'.</msg>
-<msg time="2025-02-17T16:27:50.614959" level="INFO">Temporally setting log level to: NONE</msg>
-<arg>${password_tb}</arg>
-<arg>${password}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T16:27:50.597010" elapsed="0.040789"/>
-</kw>
-<arg>secret_sauce</arg>
-<status status="PASS" start="2025-02-17T16:27:50.596716" elapsed="0.041174"/>
-</kw>
-<kw name="And User click the login button" owner="login">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:27:50.638299" level="INFO">Clicking element '//*[@id="login-button"]'.</msg>
-<arg>${login_btn}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T16:27:50.638183" elapsed="0.047709"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:27:50.638018" elapsed="0.047980"/>
-</kw>
-<kw name="Then User should go to inventory page" owner="inventory">
-<kw name="Element Text Should Be" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:27:50.686517" level="INFO">Verifying element '//span[contains(text(), 'Products')]' contains exact text 'Products'.</msg>
-<arg>${title_prod_txt}</arg>
-<arg>Products</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="PASS" start="2025-02-17T16:27:50.686391" elapsed="0.013693"/>
-</kw>
-<kw name="Select From List By Label" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:27:50.700387" level="INFO">Selecting options from selection list '//select[@class='product_sort_container']' by label Price (high to low).</msg>
-<arg>${select_sort}</arg>
-<arg>Price (high to low)</arg>
-<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<status status="PASS" start="2025-02-17T16:27:50.700227" elapsed="0.042427"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:27:50.686217" elapsed="0.056519"/>
-</kw>
-<kw name="And Browser automatically close" owner="common">
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-02-17T16:27:52.745567" level="INFO">Slept 2 seconds.</msg>
-<arg>2</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-02-17T16:27:50.743042" elapsed="2.003139"/>
-</kw>
-<kw name="Close All Browsers" owner="SeleniumLibrary">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2025-02-17T16:27:52.747355" elapsed="0.088739"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:27:50.742872" elapsed="2.093341"/>
-</kw>
-<var name="${users}">visual_user</var>
-<status status="PASS" start="2025-02-17T16:27:46.073176" elapsed="6.763075"/>
-</iter>
-<var>${users}</var>
-<value>@{valid_username}</value>
-<status status="PASS" start="2025-02-17T16:27:12.260372" elapsed="40.575945"/>
-</for>
-<kw name="Browser automatically close" owner="common" type="TEARDOWN">
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-02-17T16:27:54.838671" level="INFO">Slept 2 seconds.</msg>
-<arg>2</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-02-17T16:27:52.836843" elapsed="2.002424"/>
-</kw>
-<kw name="Close All Browsers" owner="SeleniumLibrary">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2025-02-17T16:27:54.840136" elapsed="0.000621"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:27:52.836651" elapsed="2.004343"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:27:11.109043" elapsed="43.732762"/>
-</test>
-<test id="s1-t2" name="Scenario: Verify user should be failed login with empty username and empty password" line="21">
-<kw name="user open the saucedemo apps" owner="common" type="SETUP">
-<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
-<arg>10</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2025-02-17T16:27:54.845226" elapsed="0.000339"/>
-</kw>
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:27:54.846017" level="INFO">Opening browser 'chrome' to base url 'https://saucedemo.com'.</msg>
-<arg>https://saucedemo.com</arg>
-<arg>chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-02-17T16:27:54.845792" elapsed="8.196003"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-02-17T16:28:03.042031" elapsed="0.367301"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:27:54.844682" elapsed="8.564748"/>
-</kw>
-<kw name="When user doesn't fill username" owner="login">
-<kw name="Clear Element Text" owner="SeleniumLibrary">
-<arg>${username_tb}</arg>
-<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T16:28:03.410036" elapsed="0.028211"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:28:03.409692" elapsed="0.028645"/>
-</kw>
-<kw name="And user doesn't fill password" owner="login">
-<kw name="Clear Element Text" owner="SeleniumLibrary">
-<arg>${password_tb}</arg>
-<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T16:28:03.438730" elapsed="0.018480"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:28:03.438550" elapsed="0.018741"/>
-</kw>
-<kw name="And User click the login button" owner="login">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:28:03.457738" level="INFO">Clicking element '//*[@id="login-button"]'.</msg>
-<arg>${login_btn}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T16:28:03.457624" elapsed="0.040814"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:28:03.457457" elapsed="0.041063"/>
-</kw>
-<kw name="Then User can't login to system because username and password are empty" owner="login">
-<kw name="Element Text Should Be" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:28:03.498963" level="INFO">Verifying element '//h3[@data-test='error']' contains exact text 'Epic sadface: Username is required'.</msg>
-<arg>${msg_login_validation}</arg>
-<arg>Epic sadface: Username is required</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="PASS" start="2025-02-17T16:28:03.498838" elapsed="0.013323"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:28:03.498680" elapsed="0.013564"/>
-</kw>
-<kw name="Browser automatically close" owner="common" type="TEARDOWN">
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-02-17T16:28:05.514251" level="INFO">Slept 2 seconds.</msg>
-<arg>2</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-02-17T16:28:03.512673" elapsed="2.002314"/>
-</kw>
-<kw name="Close All Browsers" owner="SeleniumLibrary">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2025-02-17T16:28:05.515868" elapsed="0.084953"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:28:03.512485" elapsed="2.088421"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:27:54.843207" elapsed="10.757768"/>
-</test>
-<test id="s1-t3" name="Scenario: Verify user should be failed login without input username" line="29">
-<kw name="user open the saucedemo apps" owner="common" type="SETUP">
-<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
-<arg>10</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2025-02-17T16:28:05.601590" elapsed="0.000113"/>
-</kw>
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:28:05.601960" level="INFO">Opening browser 'chrome' to base url 'https://saucedemo.com'.</msg>
-<arg>https://saucedemo.com</arg>
-<arg>chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-02-17T16:28:05.601855" elapsed="1.007144"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-02-17T16:28:06.609306" elapsed="0.366767"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:28:05.601441" elapsed="1.374746"/>
-</kw>
-<kw name="When user doesn't fill username" owner="login">
-<kw name="Clear Element Text" owner="SeleniumLibrary">
-<arg>${username_tb}</arg>
-<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T16:28:06.976659" elapsed="0.025426"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:28:06.976446" elapsed="0.025726"/>
-</kw>
-<kw name="And user input correct password" owner="login">
-<kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:28:07.002691" level="INFO">Typing password into text field '//*[@id="password"]'.</msg>
-<msg time="2025-02-17T16:28:07.021054" level="INFO">Temporally setting log level to: NONE</msg>
-<arg>${password_tb}</arg>
-<arg>${password}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T16:28:07.002549" elapsed="0.090242"/>
-</kw>
-<arg>secret_sauce</arg>
-<status status="PASS" start="2025-02-17T16:28:07.002343" elapsed="0.090531"/>
-</kw>
-<kw name="And User click the login button" owner="login">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:28:07.093353" level="INFO">Clicking element '//*[@id="login-button"]'.</msg>
-<arg>${login_btn}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T16:28:07.093216" elapsed="0.038324"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:28:07.093041" elapsed="0.038582"/>
-</kw>
-<kw name="Then User can't login to system because username only is empty" owner="login">
-<kw name="Element Text Should Be" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:28:07.132094" level="INFO">Verifying element '//h3[@data-test='error']' contains exact text 'Epic sadface: Username is required'.</msg>
-<arg>${msg_login_validation}</arg>
-<arg>Epic sadface: Username is required</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="PASS" start="2025-02-17T16:28:07.131963" elapsed="0.013839"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:28:07.131792" elapsed="0.014089"/>
-</kw>
-<kw name="Browser automatically close" owner="common" type="TEARDOWN">
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-02-17T16:28:09.148274" level="INFO">Slept 2 seconds.</msg>
-<arg>2</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-02-17T16:28:07.146252" elapsed="2.002632"/>
-</kw>
-<kw name="Close All Browsers" owner="SeleniumLibrary">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2025-02-17T16:28:09.149744" elapsed="0.084105"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:28:07.146084" elapsed="2.087849"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:28:05.601197" elapsed="3.632806"/>
-</test>
-<test id="s1-t4" name="Scenario: Verify user should be failed login without input password" line="37">
-<kw name="user open the saucedemo apps" owner="common" type="SETUP">
-<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
-<arg>10</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2025-02-17T16:28:09.234567" elapsed="0.000101"/>
-</kw>
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:28:09.234821" level="INFO">Opening browser 'chrome' to base url 'https://saucedemo.com'.</msg>
-<arg>https://saucedemo.com</arg>
-<arg>chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-02-17T16:28:09.234746" elapsed="0.958773"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-02-17T16:28:10.193873" elapsed="0.369133"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:28:09.234416" elapsed="1.328777"/>
-</kw>
-<kw name="When user input correct username" owner="login">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:28:10.563883" level="INFO">Typing text 'standard_user' into text field '//*[@id="user-name"]'.</msg>
-<arg>${username_tb}</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T16:28:10.563712" elapsed="0.095181"/>
+<status status="PASS" start="2025-02-17T17:37:49.915810" elapsed="0.103039"/>
 </kw>
 <arg>standard_user</arg>
-<status status="PASS" start="2025-02-17T16:28:10.563486" elapsed="0.095489"/>
+<status status="PASS" start="2025-02-17T17:37:49.915496" elapsed="0.103440"/>
 </kw>
-<kw name="And user doesn't fill password" owner="login">
-<kw name="Clear Element Text" owner="SeleniumLibrary">
-<arg>${password_tb}</arg>
-<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T16:28:10.659382" elapsed="0.019058"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:28:10.659208" elapsed="0.019415"/>
-</kw>
-<kw name="And User click the login button" owner="login">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:28:10.679313" level="INFO">Clicking element '//*[@id="login-button"]'.</msg>
-<arg>${login_btn}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T16:28:10.679113" elapsed="0.044269"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:28:10.678855" elapsed="0.044614"/>
-</kw>
-<kw name="Then User can't login to system because password only is empty" owner="login">
-<kw name="Element Text Should Be" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:28:10.724048" level="INFO">Verifying element '//h3[@data-test='error']' contains exact text 'Epic sadface: Password is required'.</msg>
-<arg>${msg_login_validation}</arg>
-<arg>Epic sadface: Password is required</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="PASS" start="2025-02-17T16:28:10.723915" elapsed="0.013949"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:28:10.723716" elapsed="0.014237"/>
-</kw>
-<kw name="Browser automatically close" owner="common" type="TEARDOWN">
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-02-17T16:28:12.740855" level="INFO">Slept 2 seconds.</msg>
-<arg>2</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-02-17T16:28:10.738319" elapsed="2.002742"/>
-</kw>
-<kw name="Close All Browsers" owner="SeleniumLibrary">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2025-02-17T16:28:12.741321" elapsed="0.093409"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:28:10.738155" elapsed="2.096671"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:28:09.234169" elapsed="3.600729"/>
-</test>
-<test id="s1-t5" name="Scenario: Verify user should be failed login using random username and random password" line="45">
-<kw name="user open the saucedemo apps" owner="common" type="SETUP">
-<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
-<arg>10</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2025-02-17T16:28:12.835509" elapsed="0.000109"/>
-</kw>
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:28:12.835775" level="INFO">Opening browser 'chrome' to base url 'https://saucedemo.com'.</msg>
-<arg>https://saucedemo.com</arg>
-<arg>chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-02-17T16:28:12.835697" elapsed="1.052209"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-02-17T16:28:13.888256" elapsed="0.365964"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:28:12.835355" elapsed="1.418976"/>
-</kw>
-<kw name="When user input random username" owner="login">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:28:14.254973" level="INFO">Typing text 'pokemon' into text field '//*[@id="user-name"]'.</msg>
-<arg>${username_tb}</arg>
-<arg>${rand_user}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T16:28:14.254805" elapsed="0.096653"/>
-</kw>
-<arg>pokemon</arg>
-<status status="PASS" start="2025-02-17T16:28:14.254588" elapsed="0.096957"/>
-</kw>
-<kw name="And user input random password" owner="login">
+<kw name="user input correct password" owner="login">
 <kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:28:14.352197" level="INFO">Typing password into text field '//*[@id="password"]'.</msg>
-<msg time="2025-02-17T16:28:14.371933" level="INFO">Temporally setting log level to: NONE</msg>
-<arg>${password_tb}</arg>
-<arg>${rand_pass}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T16:28:14.351965" elapsed="0.042630"/>
-</kw>
-<arg>pikachu</arg>
-<status status="PASS" start="2025-02-17T16:28:14.351721" elapsed="0.042949"/>
-</kw>
-<kw name="And User click the login button" owner="login">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:28:14.395097" level="INFO">Clicking element '//*[@id="login-button"]'.</msg>
-<arg>${login_btn}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T16:28:14.394979" elapsed="0.040059"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:28:14.394822" elapsed="0.040304"/>
-</kw>
-<kw name="Then User can't login to system because username and password are invalid" owner="login">
-<kw name="Element Text Should Be" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:28:14.435591" level="INFO">Verifying element '//h3[@data-test='error']' contains exact text 'Epic sadface: Username and password do not match any user in this service'.</msg>
-<arg>${msg_login_validation}</arg>
-<arg>Epic sadface: Username and password do not match any user in this service</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="PASS" start="2025-02-17T16:28:14.435464" elapsed="0.013138"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:28:14.435293" elapsed="0.013394"/>
-</kw>
-<kw name="Browser automatically close" owner="common" type="TEARDOWN">
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-02-17T16:28:16.449740" level="INFO">Slept 2 seconds.</msg>
-<arg>2</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-02-17T16:28:14.449061" elapsed="2.001176"/>
-</kw>
-<kw name="Close All Browsers" owner="SeleniumLibrary">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2025-02-17T16:28:16.450849" elapsed="0.089241"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:28:14.448894" elapsed="2.091285"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:28:12.835076" elapsed="3.705171"/>
-</test>
-<test id="s1-t6" name="Scenario: Verify user should be failed login using locked_out_user" line="53">
-<kw name="user open the saucedemo apps" owner="common" type="SETUP">
-<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
-<arg>10</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2025-02-17T16:28:16.540967" elapsed="0.000111"/>
-</kw>
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:28:16.541245" level="INFO">Opening browser 'chrome' to base url 'https://saucedemo.com'.</msg>
-<arg>https://saucedemo.com</arg>
-<arg>chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-02-17T16:28:16.541165" elapsed="4.083916"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-02-17T16:28:20.625385" elapsed="0.367584"/>
-</kw>
-<status status="PASS" start="2025-02-17T16:28:16.540807" elapsed="4.452276"/>
-</kw>
-<kw name="When user input random username" owner="login">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:28:20.993837" level="INFO">Typing text 'locked_out_user' into text field '//*[@id="user-name"]'.</msg>
-<arg>${username_tb}</arg>
-<arg>${rand_user}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T16:28:20.993651" elapsed="0.098614"/>
-</kw>
-<arg>locked_out_user</arg>
-<status status="PASS" start="2025-02-17T16:28:20.993348" elapsed="0.099001"/>
-</kw>
-<kw name="And user input correct password" owner="login">
-<kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:28:21.092826" level="INFO">Typing password into text field '//*[@id="password"]'.</msg>
-<msg time="2025-02-17T16:28:21.111710" level="INFO">Temporally setting log level to: NONE</msg>
+<msg time="2025-02-17T17:37:50.019372" level="INFO">Typing password into text field '//*[@id="password"]'.</msg>
+<msg time="2025-02-17T17:37:50.040703" level="INFO">Temporally setting log level to: NONE</msg>
 <arg>${password_tb}</arg>
 <arg>${password}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T16:28:21.092702" elapsed="0.041682"/>
+<status status="PASS" start="2025-02-17T17:37:50.019237" elapsed="0.042651"/>
 </kw>
 <arg>secret_sauce</arg>
-<status status="PASS" start="2025-02-17T16:28:21.092520" elapsed="0.041944"/>
+<status status="PASS" start="2025-02-17T17:37:50.019056" elapsed="0.042917"/>
 </kw>
-<kw name="And User click the login button" owner="login">
+<kw name="user click the login button" owner="login">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:28:21.134949" level="INFO">Clicking element '//*[@id="login-button"]'.</msg>
+<msg time="2025-02-17T17:37:50.062434" level="INFO">Clicking element '//*[@id="login-button"]'.</msg>
 <arg>${login_btn}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-17T16:28:21.134834" elapsed="0.057651"/>
+<status status="PASS" start="2025-02-17T17:37:50.062249" elapsed="0.049512"/>
 </kw>
-<status status="PASS" start="2025-02-17T16:28:21.134662" elapsed="0.057914"/>
+<status status="PASS" start="2025-02-17T17:37:50.062087" elapsed="0.049755"/>
 </kw>
-<kw name="Then User can't login to system because user has been locked out" owner="login">
+<status status="PASS" start="2025-02-17T17:37:43.606004" elapsed="6.505873"/>
+</kw>
+<kw name="When User should go to inventory page" owner="inventory">
 <kw name="Element Text Should Be" owner="SeleniumLibrary">
-<msg time="2025-02-17T16:28:21.193028" level="INFO">Verifying element '//h3[@data-test='error']' contains exact text 'Epic sadface: Sorry, this user has been locked out.'.</msg>
-<arg>${msg_login_validation}</arg>
-<arg>Epic sadface: Sorry, this user has been locked out.</arg>
+<msg time="2025-02-17T17:37:50.112818" level="INFO">Verifying element '//span[contains(text(), 'Products')]' contains exact text 'Products'.</msg>
+<arg>${title_prod_txt}</arg>
+<arg>Products</arg>
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="PASS" start="2025-02-17T16:28:21.192900" elapsed="0.013475"/>
+<status status="PASS" start="2025-02-17T17:37:50.112560" elapsed="0.015213"/>
 </kw>
-<status status="PASS" start="2025-02-17T16:28:21.192733" elapsed="0.013734"/>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2025-02-17T17:37:50.128092" level="INFO">Selecting options from selection list '//select[@class='product_sort_container']' by label Price (high to low).</msg>
+<arg>${select_sort}</arg>
+<arg>Price (high to low)</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2025-02-17T17:37:50.127917" elapsed="0.043464"/>
+</kw>
+<status status="PASS" start="2025-02-17T17:37:50.112247" elapsed="0.059273"/>
+</kw>
+<kw name="Then dropdown display value is Name (A to Z)" owner="inventory">
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-17T17:37:50.172072" level="INFO">Verifying element '//select[@class='product_sort_container']' contains exact text 'Name (A to Z)'.</msg>
+<msg time="2025-02-17T17:37:50.441395" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-20.png"&gt;&lt;img src="selenium-screenshot-20.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-02-17T17:37:50.441667" level="FAIL">The text of element '//select[@class='product_sort_container']' should have been 'Name (A to Z)' but it was 'Name (A to Z)
+Name (Z to A)
+Price (low to high)
+Price (high to low)'.</msg>
+<arg>${select_sort}</arg>
+<arg>Name (A to Z)</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="FAIL" start="2025-02-17T17:37:50.171943" elapsed="0.272668">The text of element '//select[@class='product_sort_container']' should have been 'Name (A to Z)' but it was 'Name (A to Z)
+Name (Z to A)
+Price (low to high)
+Price (high to low)'.</status>
+</kw>
+<status status="FAIL" start="2025-02-17T17:37:50.171770" elapsed="0.272968">The text of element '//select[@class='product_sort_container']' should have been 'Name (A to Z)' but it was 'Name (A to Z)
+Name (Z to A)
+Price (low to high)
+Price (high to low)'.</status>
 </kw>
 <kw name="Browser automatically close" owner="common" type="TEARDOWN">
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-02-17T16:28:23.207713" level="INFO">Slept 2 seconds.</msg>
+<msg time="2025-02-17T17:37:52.447895" level="INFO">Slept 2 seconds.</msg>
 <arg>2</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-02-17T16:28:21.206869" elapsed="2.001333"/>
+<status status="PASS" start="2025-02-17T17:37:50.445131" elapsed="2.003410"/>
 </kw>
 <kw name="Close All Browsers" owner="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2025-02-17T16:28:23.208950" elapsed="0.081994"/>
+<status status="PASS" start="2025-02-17T17:37:52.449036" elapsed="0.084429"/>
 </kw>
-<status status="PASS" start="2025-02-17T16:28:21.206686" elapsed="2.084387"/>
+<status status="PASS" start="2025-02-17T17:37:50.444961" elapsed="2.088593"/>
 </kw>
-<status status="PASS" start="2025-02-17T16:28:16.540501" elapsed="6.750643"/>
+<status status="FAIL" start="2025-02-17T17:37:43.605588" elapsed="8.928037">The text of element '//select[@class='product_sort_container']' should have been 'Name (A to Z)' but it was 'Name (A to Z)
+Name (Z to A)
+Price (low to high)
+Price (high to low)'.</status>
 </test>
-<status status="PASS" start="2025-02-17T16:27:11.020397" elapsed="72.271134"/>
+<status status="FAIL" start="2025-02-17T17:37:43.497705" elapsed="9.036281"/>
 </suite>
 <statistics>
 <total>
-<stat pass="6" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Login Scenario" id="s1" pass="6" fail="0" skip="0">Login Scenario</stat>
+<stat name="Inventory Scenario" id="s1" pass="0" fail="1" skip="0">Inventory Scenario</stat>
 </suite>
 </statistics>
 <errors>

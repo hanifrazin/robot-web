@@ -2,7 +2,6 @@
 Resource   ../pages/common.resource
 Resource   ../pages/inventory.resource
 Resource   ../pages/login.resource 
-Resource    ../pages/checkout.resource
 Test Setup        user open the saucedemo apps
 Test Teardown     Browser automatically close    
 

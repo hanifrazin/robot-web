@@ -12,3 +12,5 @@ User add 3 products to cart
     Click Element                ${backpack_btn}
     Click Element                ${bolt_tshirt_btn}
     Element Text Should Be       ${number_cart}            3
+user click the dropdown to select options is Name (Z to A)
+    Select From List By Label    ${select_sort}    Name (A to Z)
