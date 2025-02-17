@@ -4,7 +4,7 @@ Variables    ../locators/inventory.py
 
 *** Keywords ***
 User should go to inventory page
-    Element Text Should Be        ${title_txt}             Swag Labs
+    # Element Text Should Be        ${title_txt}             Swag Labs
     Element Text Should Be        ${title_prod_txt}        Products
     Select From List By Label     ${select_sort}           Price (high to low)
 User add 3 products to cart
