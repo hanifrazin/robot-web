@@ -1,6 +1,7 @@
 *** Settings ***
 Library      SeleniumLibrary
 Resource     ../pages/login.resource
+Library      ../libs/api_helper.py
 
 *** Keywords ***
 user open the saucedemo apps
@@ -17,3 +18,16 @@ user success login to sauce demo
 Browser automatically close
     Sleep    2
     Close All Browsers
+
+Hit Api to get Items
+    [Arguments]    ${id}
+    Api Get Items    ${id}
+
+Get API response name from Items
+    [Arguments]    ${id}
+    ${api}    Api Get Items    ${id}
+    Log    ${api}
+
+Delete Data
+    [Arguments]    ${id}
+    Delete Data with API    ${id}
