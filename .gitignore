@@ -135,6 +135,10 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+reports/
+log.html
+output.xml
+report.html
 
 # Spyder project settings
 .spyderproject
