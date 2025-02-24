@@ -19,14 +19,30 @@ Browser automatically close
     Sleep    2
     Close All Browsers
 
-Hit Api to get Items
-    [Arguments]    ${id}
-    Api Get Items    ${id}
+Get List All Items in this api
+    GET List Items using API
 
-Get API response name from Items
+Insert new item
+    [Arguments]    &{data}
+    ${id}=    Create an Item using API    ${data}
+    RETURN    ${id}   
+
+# Hit Api to get Items
+#     [Arguments]    ${id}
+#     GET Specific Item using API    ${id}
+
+Get specific Items
     [Arguments]    ${id}
-    ${api}    Api Get Items    ${id}
-    Log    ${api}
+    ${result}    GET Specific Item using API    ${id}
+    Log    ${result}
+
+Update all items
+    [Arguments]    ${id}    &{data}
+    Update All Items using API    ${id}    ${data}
+
+Update single item
+    [Arguments]    ${id}    &{data}
+    Patch Single Items using API    ${id}    ${data}
 
 Delete Data
     [Arguments]    ${id}

@@ -19,19 +19,56 @@ from robot.api.deco import keyword
 baseURL = 'https://testapi.kelasotomesyen.com'
 file_token = open('/Users/user/Desktop/robot-web/libs/token.json')
 token = json.loads(file_token.read())
+auth_token = {'Authorization':f'Bearer {token}'}
 
-def api_get_items(id):
-    response = requests.get(f'{baseURL}/items/{id}',headers={'Authorization': f'Bearer {token}'})
+@keyword("GET List Items using API")
+def api_get_list_items():
+    response = requests.get(f'{baseURL}/items',headers=auth_token)
     
     print(response.status_code)
-    
     json_resp = json.loads(response.text)
     print(json_resp)
     return json_resp
 
+@keyword("Create an Item using API")
+def api_create_item(data):
+    response = requests.post(f'{baseURL}/items',headers=auth_token,json=data)
+    
+    print(response.status_code)
+    json_resp = json.loads(response.text)
+    print(json_resp)
+    return json_resp['id']
+
+@keyword("GET Specific Item using API")
+def api_get_items(id):
+    response = requests.get(f'{baseURL}/items/{id}',headers=auth_token)
+    
+    print(response.status_code)
+    json_resp = json.loads(response.text)
+    print(json_resp)
+    return json_resp
+
+@keyword("Update All Items using API")
+def api_update_all(id,data):
+    response = requests.put(f'{baseURL}/items/{id}',headers=auth_token,json=data)
+    
+    print(response.status_code)
+    json_resp = json.loads(response.text)
+    print(json_resp)
+    return json_resp
+
+@keyword('Patch Single Items using API')
+def api_single_update(id,data):
+    response = requests.patch(f'{baseURL}/items/{id}',headers=auth_token,json=data)
+    
+    print(response.status_code)
+    json_resp = json.loads(response.text)
+    print(json_resp)
+    return json_resp
+    
 @keyword('Delete Data with API')
 def api_delete(id):
-    response = requests.delete(f'{baseURL}/items/{id}',headers=token)
+    response = requests.delete(f'{baseURL}/items/{id}',headers=auth_token)
     
     print(response.status_code)
     

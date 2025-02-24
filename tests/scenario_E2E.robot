@@ -8,9 +8,7 @@ Resource    ../pages/finish.resource
 
 *** Tasks ***
 Running Automation from login to checkout
-    user open the saucedemo apps
-    Delete Data    89
-    Hit Api to get Items    38
+    user open the saucedemo apps   
     user input correct username        standard_user
     user input correct password        secret_sauce
     user click the login button
