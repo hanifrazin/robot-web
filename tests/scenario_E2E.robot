@@ -1,7 +1,7 @@
 *** Settings ***
 Resource    ../pages/common.resource
 Resource    ../pages/inventory.resource
-Resource    ../pages/login.resource
+# Resource    ../pages/login.resource
 Resource    ../pages/cart.resource
 Resource    ../pages/checkout.resource
 Resource    ../pages/finish.resource

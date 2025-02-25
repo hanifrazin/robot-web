@@ -3,7 +3,7 @@ Resource    ../pages/common.resource
 
 
 *** Variables ***
-&{create_data}=    name=Kue Bolu Tape
+&{create_data}     name=Kue Bolu Tape
 ...                description=Kue ini terbuat dari Tape / Peuyeum
 ...                quantity=100   
 ${id}=    0
