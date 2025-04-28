@@ -11,7 +11,7 @@ def api_get_token():
     json_resp = json.loads(response.text)
     token = json_resp['token']
     
-    with open("/Users/user/Desktop/robot-web/libs/token.json","w") as outfile:
+    with open("/Users/user/Desktop/robot framework/robot-web/libs/token.json","w") as outfile:
         json.dump(token, outfile)
         
 api_get_token()

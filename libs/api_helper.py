@@ -17,7 +17,7 @@ from robot.api.deco import keyword
 # print(json_resp)
 # print(type(json_resp))
 baseURL = 'https://testapi.kelasotomesyen.com'
-file_token = open('/Users/user/Desktop/robot-web/libs/token.json')
+file_token = open('/Users/user/Desktop/robot framework/robot-web/libs/token.json')
 token = json.loads(file_token.read())
 auth_token = {'Authorization':f'Bearer {token}'}
 
